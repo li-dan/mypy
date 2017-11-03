@@ -467,7 +467,7 @@ class TypeAnalyser(SyntheticTypeVisitor[Type], AnalyzerPluginInterface):
                 self.fail('The first argument to Callable must be a list of types or "..."', t)
                 return AnyType(TypeOfAny.from_error)
         else:
-            self.fail('Invalid function type', t)
+            self.fail('Callable takes 0 or 2 arguments, not {}'.format(len(t.args)), t)
             return AnyType(TypeOfAny.from_error)
         assert isinstance(ret, CallableType)
         return ret.accept(self)

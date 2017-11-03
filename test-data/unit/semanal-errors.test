@@ -819,8 +819,8 @@ y = None # type: Callable[int]
 z = None # type: Callable[int, int, int]
 [out]
 main:2: error: The first argument to Callable must be a list of types or "..."
-main:3: error: Invalid function type
-main:4: error: Invalid function type
+main:3: error: Callable takes 0 or 2 arguments, not 1
+main:4: error: Callable takes 0 or 2 arguments, not 3
 
 [case testAbstractGlobalFunction]
 import typing
